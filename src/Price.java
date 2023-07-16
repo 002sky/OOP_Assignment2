@@ -4,13 +4,15 @@ public abstract class Price {
     private double ChildrenWithoutBedPrice;
     private double InfantPrice;
 
-    protected Price(double AdultPrice, double InfantPrice) {
-        this.AdultPrice = AdultPrice;
-        this.InfantPrice = InfantPrice;
+    protected Price(double adultPrice, double childrenWithBedPrice, double childrenWithoutBedPrice, double infantPrice) {
+        AdultPrice = adultPrice;
+        ChildrenWithBedPrice = childrenWithBedPrice;
+        ChildrenWithoutBedPrice = childrenWithoutBedPrice;
+        InfantPrice = infantPrice;
     }
 
-    public Price() {
-
+    protected Price() {
+        this(0, 0, 0, 0);
     }
 
     public double getAdultPrice() {
@@ -48,14 +50,6 @@ public abstract class Price {
     public abstract void setDomesticPrice();
 
     public abstract void setOverseaPrice();
-
-    public void setPrice(double AdultPrice, double ChildrenWithBedPrice, double ChildrenWithoutBedPrice, double InfantPrice) {
-        this.setAdultPrice(AdultPrice);
-        this.setInfantPrice(InfantPrice);
-        this.setChildrenWithBedPrice(ChildrenWithBedPrice);
-        this.setChildrenWithoutBedPrice(ChildrenWithoutBedPrice);
-    }
-
 
 
     @Override

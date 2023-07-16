@@ -9,11 +9,11 @@ public class OverseaTour extends Tour{
     private State state;
 
 
-    public OverseaTour(){
+    protected OverseaTour(){
         this("name",6,false,false,null,null);
     }
 
-    public OverseaTour(String name,int duration, boolean isPrivateTour, boolean isJoinTour, Country country, State state) {
+    protected OverseaTour(String name,int duration, boolean isPrivateTour, boolean isJoinTour, Country country, State state) {
         super(name, duration);
         this.pricesMap = setPricesMap();
         this.isPrivateTour = isPrivateTour;

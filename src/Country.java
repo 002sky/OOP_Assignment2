@@ -5,11 +5,14 @@ public class Country {
     private String name;
     private ArrayList<State> states;
 
-    public Country(String name, ArrayList<State> states) {
+    protected Country(String name, ArrayList<State> states) {
         this.name = name;
         this.states = states;
     }
 
+    protected Country() {
+        this("Malaysia", new ArrayList<>());
+    }
 
     public String getName() {
         return name;

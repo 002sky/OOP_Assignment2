@@ -1,11 +1,13 @@
 public class NormalPrice extends Price{
-    protected NormalPrice(double AdultPrice, double InfantPrice) {
-        super(AdultPrice, InfantPrice);
-    }
 
     protected NormalPrice() {
         super();
     }
+
+    protected NormalPrice(double adultPrice, double childrenWithBedPrice, double childrenWithoutBedPrice, double infantPrice) {
+        super(adultPrice, childrenWithBedPrice, childrenWithoutBedPrice, infantPrice);
+    }
+
     @Override
     public void setDomesticPrice() {
         super.setAdultPrice(1647);

@@ -1,11 +1,14 @@
 import java.util.HashMap;
 
-public  class Tour {
+public abstract class Tour {
     private String name;
     private int duration;
-    public Tour(String name,int duration) {
+    protected Tour(String name,int duration) {
         this.name = name;
         this.duration = duration;
+    }
+    protected Tour(){
+        this("Malaysia", 1);
     }
 
     public String getName() {
@@ -28,5 +31,6 @@ public  class Tour {
         return  "Tour: " + name;
 
     }
+    public abstract HashMap<String,Price> getPricesMap();
 
 }

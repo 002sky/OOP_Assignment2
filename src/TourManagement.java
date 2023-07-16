@@ -7,12 +7,10 @@ public class TourManagement {
     private static ArrayList<Tour> tourList;
     private static ArrayList<Country> CountryList;
 
-
-    public TourManagement() {
+    protected TourManagement() {
         tourList = new ArrayList<>();
         CountryList = new ArrayList<>();
     }
-
 
     public void removeCountry(String name) {
         CountryList.removeIf(country -> country.getName().equals(name));
@@ -36,8 +34,6 @@ public class TourManagement {
                 c.getStates().add(new State(StateName));
             }
         });
-
-
     }
 
     public void addTour(Tour tour) {

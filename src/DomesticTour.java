@@ -6,11 +6,11 @@ public class DomesticTour extends Tour {
     private boolean isHoneymoonTour;
     private State state;
 
-    public DomesticTour(){
+    protected DomesticTour(){
         this("name",8,false,false,null);
     }
 
-    public DomesticTour(String name,int duration, boolean isPrivateTour, boolean isHoneymoonTour, State state) {
+    protected DomesticTour(String name,int duration, boolean isPrivateTour, boolean isHoneymoonTour, State state) {
 
         super(name,duration);
         this.pricesMap = setPricesMap();

@@ -1,8 +1,13 @@
 public class State {
     private String name;
-    public State(String name){
+    protected State(String name){
         this.name = name;
     }
+
+    protected State() {
+        this("Melaka");
+    }
+
     public String getName() {
         return name;
     }

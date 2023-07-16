@@ -1,10 +1,11 @@
 public class PeakPrice extends Price {
-    protected PeakPrice(double AdultPrice, double InfantPrice) {
-        super(AdultPrice, InfantPrice);
-    }
 
     protected PeakPrice() {
         super();
+    }
+
+    protected PeakPrice(double adultPrice, double childrenWithBedPrice, double childrenWithoutBedPrice, double infantPrice) {
+        super(adultPrice, childrenWithBedPrice, childrenWithoutBedPrice, infantPrice);
     }
 
     @Override
