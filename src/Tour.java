@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public abstract class Tour {
+public  class Tour {
     private String name;
     private int duration;
     public Tour(String name,int duration) {
@@ -28,7 +28,5 @@ public abstract class Tour {
         return  "Tour: " + name;
 
     }
-
-    public abstract HashMap<String,Price> getPricesMap();
 
 }
