@@ -1,4 +1,6 @@
-public class Tour {
+import java.util.HashMap;
+
+public abstract class Tour {
     private String name;
     private int duration;
     public Tour(String name,int duration) {
@@ -20,5 +22,13 @@ public class Tour {
         this.duration = duration;
     }
 
+
+    @Override
+    public String toString() {
+        return  "Tour: " + name;
+
+    }
+
+    public abstract HashMap<String,Price> getPricesMap();
 
 }

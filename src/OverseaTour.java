@@ -10,17 +10,29 @@ public class OverseaTour extends Tour{
 
 
     public OverseaTour(){
-        this("name",6,null,false,false,null,null);
+        this("name",6,false,false,null,null);
     }
 
-    public OverseaTour(String name,int duration,HashMap<String, Price> pricesMap, boolean isPrivateTour, boolean isJoinTour, Country country, State state) {
+    public OverseaTour(String name,int duration, boolean isPrivateTour, boolean isJoinTour, Country country, State state) {
         super(name, duration);
-        this.pricesMap = pricesMap;
+        this.pricesMap = setPricesMap();
         this.isPrivateTour = isPrivateTour;
         this.isJoinTour = isJoinTour;
         this.country = country;
         this.state = state;
     }
+    public HashMap<String, Price> setPricesMap(){
+        Price normalPrice = new NormalPrice();
+        Price peakPrice = new PeakPrice();
+        normalPrice.setOverseaPrice();
+        peakPrice.setOverseaPrice();
+        HashMap<String, Price> tmppricesMap = new HashMap<>();
+        tmppricesMap.put(normalPrice.getClass().getName() , normalPrice);
+        tmppricesMap.put(peakPrice.getClass().getName(), peakPrice);
+
+        return tmppricesMap;
+    }
+
 
     public HashMap<String, Price> getPricesMap() {
         return pricesMap;
@@ -60,6 +72,26 @@ public class OverseaTour extends Tour{
 
     public void setState(State state) {
         this.state = state;
+    }
+
+    @Override
+    public String toString() {
+        return "Tour: " + super.getName()
+                + "\nCountry: " + country.getName()
+                + "\nState: " + state.getName()
+                + "\nHas Private Tour: " + (isPrivateTour() ? "Yes" : "no")
+                + "\nHas Honeymoon Tour: " + (isJoinTour() ? "Yes" : "no")
+                + "\nDuration: " + super.getDuration() + " days"
+                + "\nPrice: " + priceMapToString();
+
+    }
+
+    public String priceMapToString(){
+        Price normalPrice = pricesMap.get("NormalPrice");
+        Price peakPrice = pricesMap.get("PeakPrice");
+
+        return  "\nNormal Price:" + normalPrice.toString() +
+                "\nPeak Price:" + peakPrice.toString();
     }
 
 
